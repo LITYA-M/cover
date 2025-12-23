@@ -32,6 +32,7 @@ Publish the website in the LocalHost.
 
 ## PROGRAM:
 ```
+frontcover.html
 <!DOCTYPE html>
 <html>
 <head>
@@ -114,6 +115,15 @@ from . import views
 urlpatterns = [
     path('', views.front_cover, name='front_cover'),
 ]
+from django.contrib import admin
+from django.urls import path, include
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', include('cover.urls')),
+]
+
+
 ```
 ```
 views.py 
